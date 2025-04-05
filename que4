@@ -1,0 +1,18 @@
+from collections import Counter
+def count_letters(filename):
+    with open (filename,'r') as inputfile:
+        file_name=inputfile.read().lower()
+        
+        letters=[]
+        for letter in file_name:
+            if letter.isalpha():
+                letters.append(letter)
+        
+        count_letter=Counter(letters)
+        count=count_letter.items()
+        return count_letter
+result=count_letters('Text.txt')
+print(result)
+
+        
+        
